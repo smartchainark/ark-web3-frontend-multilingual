@@ -7,6 +7,7 @@ import { Bitcoin, BadgeDollarSign, Gem } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { useAccount, useBalance, useBlockNumber, useChainId } from 'wagmi';
 import { useEffect } from 'react';
+import Link from 'next/link';
 
 function Page() {
   const chainId = useChainId()
@@ -47,8 +48,11 @@ function Page() {
         <div className="text-xl font-bold underline text-blue-400 mb-4">
           Hello Tailwindcss!
         </div>
-        <div className="flex ">
+        <div className="flex gap-4">
           <Button color="success" variant='flat' onClick={() => toast.success('Toast from react-hot-toast!')}>Click to show a toast</Button>
+          <Link href="/blog">
+            <Button color="primary" variant='flat'>查看技术博客</Button>
+          </Link>
         </div>
         <div className='mt-4 flex text-orange-400'>
           <Bitcoin size={40} className='mr-4'/>
