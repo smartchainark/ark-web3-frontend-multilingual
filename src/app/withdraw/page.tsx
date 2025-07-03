@@ -16,7 +16,7 @@ import {
   ModalBody,
   ModalFooter,
   useDisclosure
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { useAccount, useBalance } from "wagmi";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import toast from 'react-hot-toast';

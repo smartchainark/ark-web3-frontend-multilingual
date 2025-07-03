@@ -1,7 +1,7 @@
 'use client'
 
 import { getAllBlogPosts } from '@/lib/blog';
-import { Card, CardBody, CardHeader, Chip, Divider } from '@nextui-org/react';
+import { Card, CardBody, CardHeader, Chip, Divider } from '@heroui/react';
 import { Calendar, Clock, User, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 

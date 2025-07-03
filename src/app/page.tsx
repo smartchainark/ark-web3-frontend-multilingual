@@ -2,7 +2,7 @@
 
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { LayoutTemplate } from 'lucide-react';
-import { Button, Divider, Code } from '@nextui-org/react';
+import { Button, Divider, Code } from '@heroui/react';
 import { Bitcoin, BadgeDollarSign, Gem } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { useAccount, useBalance, useBlockNumber, useChainId } from 'wagmi';

@@ -13,7 +13,7 @@ import {
   ButtonGroup,
   Progress,
   Divider
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { useAccount, useBalance, useChainId } from "wagmi";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import toast from 'react-hot-toast';
