@@ -1,0 +1,30 @@
+{
+  "page": {
+    "title": "技術ブログ",
+    "subtitle": "フロントエンド開発、Web3技術、およびプログラミングに関する知識と経験を共有",
+    "noPosts": "ブログ記事がありません"
+  },
+  "postCard": {
+    "readTime": "{{time}}分",
+    "readMore": "続きを読む",
+    "by": "著者："
+  },
+  "postDetail": {
+    "backToBlog": "ブログ一覧に戻る",
+    "backToHome": "ホームに戻る",
+    "author": "著者：",
+    "publishDate": "公開日：",
+    "readTime": "約{{time}}分で読めます",
+    "viewMore": "他の記事を見る",
+    "thankYou": "お読みいただきありがとうございます！"
+  },
+  "notFound": {
+    "title": "記事が見つかりません",
+    "message": "申し訳ございませんが、お探しのブログ記事は存在しないか削除されています。",
+    "backToBlog": "ブログ一覧に戻る",
+    "backToHome": "ホームに戻る"
+  },
+  "meta": {
+    "description": "技術ブログ - フロントエンド開発、Web3技術、プログラミングの知識を共有"
+  }
+} 

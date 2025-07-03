@@ -1,0 +1,17 @@
+{
+  "title": "Web3 Frontend Template",
+  "subtitle": "Web3 Frontend Template",
+  "github": "@smartchainark",
+  "menu": {
+    "home": "Home",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "wallet": {
+    "connect": "Connect Wallet",
+    "disconnect": "Disconnect",
+    "connecting": "Connecting...",
+    "switch_network": "Switch Network"
+  }
+} 

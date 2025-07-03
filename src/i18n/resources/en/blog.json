@@ -1,0 +1,30 @@
+{
+  "page": {
+    "title": "Tech Blog",
+    "subtitle": "Sharing knowledge and experience in frontend development, Web3 technology, and programming",
+    "noPosts": "No blog posts available"
+  },
+  "postCard": {
+    "readTime": "{{time}} min read",
+    "readMore": "Read More",
+    "by": "By "
+  },
+  "postDetail": {
+    "backToBlog": "Back to Blog List",
+    "backToHome": "Back to Home",
+    "author": "Author: ",
+    "publishDate": "Published: ",
+    "readTime": "About {{time}} minutes read",
+    "viewMore": "View More Articles",
+    "thankYou": "Thanks for reading!"
+  },
+  "notFound": {
+    "title": "Article Not Found",
+    "message": "Sorry, the blog article you're looking for doesn't exist or has been removed.",
+    "backToBlog": "Back to Blog List",
+    "backToHome": "Back to Home"
+  },
+  "meta": {
+    "description": "Tech Blog - Sharing frontend development, Web3 technology and programming knowledge"
+  }
+} 

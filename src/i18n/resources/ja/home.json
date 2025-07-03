@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "title": "<highlight>Web3 テンプレート</highlight>へようこそ",
+    "description": "最新技術スタックで構築されたWeb3フロントエンドテンプレート。最新のブロックチェーン開発ツールと美しいUIコンポーネントを統合"
+  },
+  "features": {
+    "interaction": {
+      "title": "インタラクティブデモ",
+      "description": "モダンなインタラクティブ効果を体験",
+      "button": "通知を表示"
+    },
+    "blog": {
+      "title": "テックブログ", 
+      "description": "最新の技術記事とチュートリアルをチェック",
+      "button": "ブログを閲覧"
+    },
+    "icons": {
+      "title": "Web3 アイコン",
+      "description": "美しいブロックチェーン関連アイコン"
+    }
+  },
+  "sections": {
+    "tech_stack": {
+      "title": "🛠️ 技術スタック",
+      "items": {
+        "react": "<code>React</code>と<code>Next.js</code>で構築",
+        "styles": "<code>Tailwindcss</code>でスタイリング", 
+        "ui": "<code>HeroUI</code>のUIコンポーネント",
+        "icons": "<code>Lucide</code>アイコンライブラリ",
+        "toast": "<code>react-hot-toast</code>で通知",
+        "wallet": "<code>Rainbowkit</code>でWeb3接続",
+        "web3": "<code>viem</code>と<code>wagmi</code>でブロックチェーン操作"
+      }
+    },
+    "web3_info": {
+      "title": "🌐 Web3 情報",
+      "labels": {
+        "chain_id": "チェーンID:",
+        "block_height": "ブロック高さ:",
+        "wallet_address": "ウォレットアドレス:",
+        "balance": "残高:"
+      }
+    }
+  },
+  "author": {
+    "title": "プロジェクト作者",
+    "description": "モダンなWeb3開発ツールとテンプレートの構築に専念"
+  },
+  "toast": {
+    "demo_message": "🎉 react-hot-toastからのメッセージ！"
+  }
+} 

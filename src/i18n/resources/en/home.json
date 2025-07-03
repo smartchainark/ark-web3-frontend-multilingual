@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "title": "Welcome to <highlight>Web3 Template</highlight>",
+    "description": "A modern Web3 frontend template built with cutting-edge technology stack, featuring the latest blockchain development tools and beautiful UI components"
+  },
+  "features": {
+    "interaction": {
+      "title": "Interactive Demo",
+      "description": "Experience modern interactive effects",
+      "button": "Show Notification"
+    },
+    "blog": {
+      "title": "Tech Blog", 
+      "description": "Check out the latest tech articles and tutorials",
+      "button": "Browse Blog"
+    },
+    "icons": {
+      "title": "Web3 Icons",
+      "description": "Beautiful blockchain-related icons"
+    }
+  },
+  "sections": {
+    "tech_stack": {
+      "title": "🛠️ Tech Stack",
+      "items": {
+        "react": "Built with <code>React</code> and <code>Next.js</code>",
+        "styles": "Styled with <code>Tailwindcss</code>", 
+        "ui": "UI components from <code>HeroUI</code>",
+        "icons": "Icons from <code>Lucide</code> library",
+        "toast": "Notifications with <code>react-hot-toast</code>",
+        "wallet": "Web3 connection via <code>Rainbowkit</code>",
+        "web3": "Blockchain interaction with <code>viem</code> and <code>wagmi</code>"
+      }
+    },
+    "web3_info": {
+      "title": "🌐 Web3 Info",
+      "labels": {
+        "chain_id": "Chain ID:",
+        "block_height": "Block Height:",
+        "wallet_address": "Wallet Address:",
+        "balance": "Balance:"
+      }
+    }
+  },
+  "author": {
+    "title": "Project Author",
+    "description": "Dedicated to building modern Web3 development tools and templates"
+  },
+  "toast": {
+    "demo_message": "🎉 Toast from react-hot-toast!"
+  }
+} 

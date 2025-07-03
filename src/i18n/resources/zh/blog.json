@@ -1,0 +1,30 @@
+{
+  "page": {
+    "title": "技术博客",
+    "subtitle": "分享前端开发、Web3 技术以及编程相关的知识和经验",
+    "noPosts": "暂无博客文章"
+  },
+  "postCard": {
+    "readTime": "{{time}}分钟",
+    "readMore": "阅读全文",
+    "by": "作者："
+  },
+  "postDetail": {
+    "backToBlog": "返回博客列表",
+    "backToHome": "回到首页",
+    "author": "作者：",
+    "publishDate": "发布日期：",
+    "readTime": "约 {{time}} 分钟阅读",
+    "viewMore": "查看更多文章",
+    "thankYou": "感谢阅读！"
+  },
+  "notFound": {
+    "title": "文章不存在",
+    "message": "抱歉，您要查找的博客文章不存在或已被删除。",
+    "backToBlog": "返回博客列表",
+    "backToHome": "回到首页"
+  },
+  "meta": {
+    "description": "技术博客 - 分享前端开发、Web3技术和编程知识"
+  }
+} 

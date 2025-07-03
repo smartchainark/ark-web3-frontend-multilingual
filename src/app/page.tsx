@@ -7,9 +7,12 @@ import { Bitcoin, BadgeDollarSign, Gem, Sparkles, Globe, Zap } from 'lucide-reac
 import toast from 'react-hot-toast';
 import { useAccount, useBalance, useBlockNumber, useChainId } from 'wagmi';
 import { useEffect, useCallback } from 'react';
+import { useTranslation, Trans } from 'react-i18next';
 import Link from 'next/link';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 function Page() {
+  const { t } = useTranslation(['navigation', 'home', 'common']);
   const chainId = useChainId()
   const { data: blockNumber} = useBlockNumber()
   const { address } = useAccount()
@@ -24,7 +27,7 @@ function Page() {
 
   // 使用 useCallback 解决 onClick 过期问题
   const handleToastClick = useCallback(() => {
-    toast.success('🎉 Toast from react-hot-toast!', {
+    toast.success(t('home:toast.demo_message'), {
       duration: 3000,
       position: 'top-center',
       style: {
@@ -35,7 +38,7 @@ function Page() {
         fontWeight: '500',
       },
     });
-  }, []);
+  }, [t]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
@@ -46,17 +49,20 @@ function Page() {
             <LayoutTemplate className='text-white' size={32}/>
           </div>
           <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Web3 Frontend Template
+            {t('navigation:title')}
           </span>
         </div>
         <div className="flex items-center gap-4">
+          {/* 语言切换器 */}
+          <LanguageSwitcher showLabel />
+          
           <HeroUILink 
             href="https://github.com/smartchainark" 
             isExternal 
             className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors"
           >
             <Github size={20} />
-            <span className="hidden sm:inline">@smartchainark</span>
+            <span className="hidden sm:inline">{t('navigation:github')}</span>
           </HeroUILink>
           <ConnectButton />
         </div>
@@ -67,10 +73,15 @@ function Page() {
         {/* 欢迎区域 */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            欢迎使用 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Web3 模板</span>
+            <Trans 
+              i18nKey="home:hero.title" 
+              components={{ 
+                highlight: <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent" />
+              }}
+            />
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            基于现代技术栈构建的 Web3 前端模板，集成了最新的区块链开发工具和美观的 UI 组件
+            {t('home:hero.description')}
           </p>
         </div>
 
@@ -82,11 +93,11 @@ function Page() {
                 <div className="bg-green-100 p-2 rounded-lg">
                   <Sparkles className="text-green-600" size={24} />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-800">交互演示</h3>
+                <h3 className="text-lg font-semibold text-gray-800">{t('home:features.interaction.title')}</h3>
               </div>
             </CardHeader>
             <CardBody className="pt-0">
-              <p className="text-gray-600 mb-4">体验现代化的交互效果</p>
+              <p className="text-gray-600 mb-4">{t('home:features.interaction.description')}</p>
               <Button 
                 color="success" 
                 variant='flat' 
@@ -94,7 +105,7 @@ function Page() {
                 className="w-full font-medium"
                 startContent={<Zap size={16} />}
               >
-                显示通知
+                {t('home:features.interaction.button')}
               </Button>
             </CardBody>
           </Card>
@@ -105,11 +116,11 @@ function Page() {
                 <div className="bg-blue-100 p-2 rounded-lg">
                   <Globe className="text-blue-600" size={24} />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-800">技术博客</h3>
+                <h3 className="text-lg font-semibold text-gray-800">{t('home:features.blog.title')}</h3>
               </div>
             </CardHeader>
             <CardBody className="pt-0">
-              <p className="text-gray-600 mb-4">查看最新的技术文章和教程</p>
+              <p className="text-gray-600 mb-4">{t('home:features.blog.description')}</p>
               <Link href="/blog" className="w-full">
                 <Button 
                   color="primary" 
@@ -117,7 +128,7 @@ function Page() {
                   className="w-full font-medium"
                   endContent={<ExternalLink size={16} />}
                 >
-                  浏览博客
+                  {t('home:features.blog.button')}
                 </Button>
               </Link>
             </CardBody>
@@ -129,11 +140,11 @@ function Page() {
                 <div className="bg-orange-100 p-2 rounded-lg">
                   <Bitcoin className="text-orange-600" size={24} />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-800">Web3 图标</h3>
+                <h3 className="text-lg font-semibold text-gray-800">{t('home:features.icons.title')}</h3>
               </div>
             </CardHeader>
             <CardBody className="pt-0">
-              <p className="text-gray-600 mb-4">精美的区块链相关图标</p>
+              <p className="text-gray-600 mb-4">{t('home:features.icons.description')}</p>
               <div className='flex justify-center gap-4 text-orange-500'>
                 <Bitcoin size={32} className='hover:scale-110 transition-transform cursor-pointer'/>
                 <BadgeDollarSign size={32} className='hover:scale-110 transition-transform cursor-pointer'/>
@@ -147,37 +158,86 @@ function Page() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <Card className="bg-white/60 backdrop-blur-sm border-0 shadow-lg">
             <CardHeader>
-              <h2 className="text-2xl font-bold text-gray-800">🛠️ 技术栈</h2>
+              <h2 className="text-2xl font-bold text-gray-800">{t('home:sections.tech_stack.title')}</h2>
             </CardHeader>
             <CardBody>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <span>基于 <Code color="primary" size="sm">React</Code> 和 <Code color="primary" size="sm">Next.js</Code></span>
+                  <span>
+                    <Trans 
+                      i18nKey="home:sections.tech_stack.items.react" 
+                      components={{ 
+                        code: <Code color="primary" size="sm" />
+                      }}
+                    />
+                  </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span>使用 <Code color="success" size="sm">Tailwindcss</Code> 进行样式设计</span>
+                  <span>
+                    <Trans 
+                      i18nKey="home:sections.tech_stack.items.styles" 
+                      components={{ 
+                        code: <Code color="success" size="sm" />
+                      }}
+                    />
+                  </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <span>使用 <Code color="secondary" size="sm">HeroUI</Code> 提供 UI 组件</span>
+                  <span>
+                    <Trans 
+                      i18nKey="home:sections.tech_stack.items.ui" 
+                      components={{ 
+                        code: <Code color="secondary" size="sm" />
+                      }}
+                    />
+                  </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                  <span>使用 <Code color="warning" size="sm">Lucide</Code> 图标库</span>
+                  <span>
+                    <Trans 
+                      i18nKey="home:sections.tech_stack.items.icons" 
+                      components={{ 
+                        code: <Code color="warning" size="sm" />
+                      }}
+                    />
+                  </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                  <span>使用 <Code color="danger" size="sm">react-hot-toast</Code> 消息提示</span>
+                  <span>
+                    <Trans 
+                      i18nKey="home:sections.tech_stack.items.toast" 
+                      components={{ 
+                        code: <Code color="danger" size="sm" />
+                      }}
+                    />
+                  </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
-                  <span>使用 <Code color="primary" size="sm">Rainbowkit</Code> 连接 Web3</span>
+                  <span>
+                    <Trans 
+                      i18nKey="home:sections.tech_stack.items.wallet" 
+                      components={{ 
+                        code: <Code color="primary" size="sm" />
+                      }}
+                    />
+                  </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
-                  <span>使用 <Code color="primary" size="sm">viem</Code> 和 <Code color="primary" size="sm">wagmi</Code> 进行区块链交互</span>
+                  <span>
+                    <Trans 
+                      i18nKey="home:sections.tech_stack.items.web3" 
+                      components={{ 
+                        code: <Code color="primary" size="sm" />
+                      }}
+                    />
+                  </span>
                 </div>
               </div>
             </CardBody>
@@ -185,28 +245,28 @@ function Page() {
 
           <Card className="bg-white/60 backdrop-blur-sm border-0 shadow-lg">
             <CardHeader>
-              <h2 className="text-2xl font-bold text-gray-800">🌐 Web3 信息</h2>
+              <h2 className="text-2xl font-bold text-gray-800">{t('home:sections.web3_info.title')}</h2>
             </CardHeader>
             <CardBody>
               <div className="space-y-4">
                 <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                  <span className="text-gray-600 font-medium">链 ID:</span>
-                  <Code color="primary" size="sm">{chainId || '未连接'}</Code>
+                  <span className="text-gray-600 font-medium">{t('home:sections.web3_info.labels.chain_id')}</span>
+                  <Code color="primary" size="sm">{chainId || t('common:status.disconnected')}</Code>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                  <span className="text-gray-600 font-medium">区块高度:</span>
-                  <Code color="success" size="sm">{blockNumber ? Number(blockNumber).toLocaleString() : '未连接'}</Code>
+                  <span className="text-gray-600 font-medium">{t('home:sections.web3_info.labels.block_height')}</span>
+                  <Code color="success" size="sm">{blockNumber ? Number(blockNumber).toLocaleString() : t('common:status.disconnected')}</Code>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                  <span className="text-gray-600 font-medium">钱包地址:</span>
+                  <span className="text-gray-600 font-medium">{t('home:sections.web3_info.labels.wallet_address')}</span>
                   <Code color="secondary" size="sm" className="max-w-32 truncate">
-                    {address || '未连接'}
+                    {address || t('common:status.disconnected')}
                   </Code>
                 </div>
                 <div className="flex justify-between items-center py-2">
-                  <span className="text-gray-600 font-medium">余额:</span>
+                  <span className="text-gray-600 font-medium">{t('home:sections.web3_info.labels.balance')}</span>
                   <Code color="warning" size="sm">
-                    {balance ? `${(Number(balance.value) / 10 ** balance?.decimals).toFixed(6)} ${balance.symbol}` : '未连接'}
+                    {balance ? `${(Number(balance.value) / 10 ** balance?.decimals).toFixed(6)} ${balance.symbol}` : t('common:status.disconnected')}
                   </Code>
                 </div>
               </div>
@@ -219,17 +279,17 @@ function Page() {
           <CardBody className="text-center py-8">
             <div className="flex items-center justify-center gap-3 mb-2">
               <Github size={24} className="text-gray-600" />
-              <span className="text-lg font-medium text-gray-800">项目作者</span>
+              <span className="text-lg font-medium text-gray-800">{t('home:author.title')}</span>
             </div>
             <HeroUILink 
               href="https://github.com/smartchainark" 
               isExternal 
               className="text-xl font-bold text-blue-600 hover:text-blue-800 transition-colors"
             >
-              @smartchainark
+              {t('navigation:github')}
             </HeroUILink>
             <p className="text-gray-600 mt-2">
-              致力于构建现代化的 Web3 开发工具和模板
+              {t('home:author.description')}
             </p>
           </CardBody>
         </Card>

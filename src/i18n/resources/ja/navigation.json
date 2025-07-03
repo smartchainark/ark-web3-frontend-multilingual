@@ -1,0 +1,17 @@
+{
+  "title": "Web3 フロントエンドテンプレート",
+  "subtitle": "Web3 Frontend Template",
+  "github": "@smartchainark",
+  "menu": {
+    "home": "ホーム",
+    "blog": "ブログ",
+    "about": "について",
+    "contact": "お問い合わせ"
+  },
+  "wallet": {
+    "connect": "ウォレット接続",
+    "disconnect": "切断",
+    "connecting": "接続中...",
+    "switch_network": "ネットワーク切り替え"
+  }
+} 

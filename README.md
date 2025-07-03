@@ -1,4 +1,4 @@
-# 🚀 ARK Web3 Frontend Template
+# 🚀 ARK Web3 Frontend Template - 多语言版
 
 一个基于现代技术栈构建的 Web3 前端模板，专为区块链应用开发而设计。集成了最新的区块链开发工具和美观的 UI 组件，让您快速开始 Web3 项目开发。
 

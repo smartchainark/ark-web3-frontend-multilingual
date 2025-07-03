@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "title": "欢迎使用 <highlight>Web3 模板</highlight>",
+    "description": "基于现代技术栈构建的 Web3 前端模板，集成了最新的区块链开发工具和美观的 UI 组件"
+  },
+  "features": {
+    "interaction": {
+      "title": "交互演示",
+      "description": "体验现代化的交互效果",
+      "button": "显示通知"
+    },
+    "blog": {
+      "title": "技术博客", 
+      "description": "查看最新的技术文章和教程",
+      "button": "浏览博客"
+    },
+    "icons": {
+      "title": "Web3 图标",
+      "description": "精美的区块链相关图标"
+    }
+  },
+  "sections": {
+    "tech_stack": {
+      "title": "🛠️ 技术栈",
+      "items": {
+        "react": "基于 <code>React</code> 和 <code>Next.js</code>",
+        "styles": "使用 <code>Tailwindcss</code> 进行样式设计", 
+        "ui": "使用 <code>HeroUI</code> 提供 UI 组件",
+        "icons": "使用 <code>Lucide</code> 图标库",
+        "toast": "使用 <code>react-hot-toast</code> 消息提示",
+        "wallet": "使用 <code>Rainbowkit</code> 连接 Web3",
+        "web3": "使用 <code>viem</code> 和 <code>wagmi</code> 进行区块链交互"
+      }
+    },
+    "web3_info": {
+      "title": "🌐 Web3 信息",
+      "labels": {
+        "chain_id": "链 ID:",
+        "block_height": "区块高度:",
+        "wallet_address": "钱包地址:",
+        "balance": "余额:"
+      }
+    }
+  },
+  "author": {
+    "title": "项目作者",
+    "description": "致力于构建现代化的 Web3 开发工具和模板"
+  },
+  "toast": {
+    "demo_message": "🎉 来自 react-hot-toast 的消息！"
+  }
+} 

@@ -1,0 +1,31 @@
+{
+  "buttons": {
+    "submit": "送信",
+    "cancel": "キャンセル",
+    "save": "保存",
+    "confirm": "確認",
+    "close": "閉じる",
+    "back": "戻る",
+    "next": "次へ",
+    "prev": "前へ",
+    "loading": "読み込み中...",
+    "retry": "再試行"
+  },
+  "status": {
+    "loading": "読み込み中...",
+    "success": "成功",
+    "error": "エラー",
+    "warning": "警告",
+    "info": "情報",
+    "connected": "接続済み",
+    "disconnected": "未接続"
+  },
+  "labels": {
+    "language": "言語",
+    "theme": "テーマ",
+    "settings": "設定",
+    "profile": "プロフィール",
+    "logout": "ログアウト",
+    "login": "ログイン"
+  }
+} 

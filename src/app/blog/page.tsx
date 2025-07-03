@@ -4,17 +4,19 @@ import { getAllBlogPosts } from '@/lib/blog';
 import { Card, CardBody, CardHeader, Chip, Divider } from '@heroui/react';
 import { Calendar, Clock, User, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function BlogPage() {
   const posts = getAllBlogPosts();
+  const { t } = useTranslation('blog');
 
   return (
     <div className="container mx-auto px-4 py-8">
       {/* 页面标题 */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">技术博客</h1>
+        <h1 className="text-4xl font-bold text-gray-800 mb-4">{t('page.title')}</h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          分享前端开发、Web3 技术以及编程相关的知识和经验
+          {t('page.subtitle')}
         </p>
         <Divider className="my-6" />
       </div>
@@ -64,7 +66,7 @@ export default function BlogPage() {
                 </div>
                 <div className="flex items-center gap-1">
                   <Clock size={14} />
-                  <span>{post.readTime}分钟</span>
+                  <span>{t('postCard.readTime', { time: post.readTime })}</span>
                 </div>
               </div>
 
@@ -73,7 +75,7 @@ export default function BlogPage() {
                 href={`/blog/${post.id}`}
                 className="flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors duration-200"
               >
-                阅读全文
+                {t('postCard.readMore')}
                 <ArrowRight size={16} />
               </Link>
             </CardBody>
@@ -84,7 +86,7 @@ export default function BlogPage() {
       {/* 如果没有文章 */}
       {posts.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-gray-500 text-lg">暂无博客文章</p>
+          <p className="text-gray-500 text-lg">{t('page.noPosts')}</p>
         </div>
       )}
     </div>

@@ -1,0 +1,17 @@
+{
+  "title": "Web3 前端模板",
+  "subtitle": "Web3 Frontend Template",
+  "github": "@smartchainark",
+  "menu": {
+    "home": "首页",
+    "blog": "博客",
+    "about": "关于",
+    "contact": "联系我们"
+  },
+  "wallet": {
+    "connect": "连接钱包",
+    "disconnect": "断开连接",
+    "connecting": "连接中...",
+    "switch_network": "切换网络"
+  }
+} 

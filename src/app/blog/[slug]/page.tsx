@@ -1,19 +1,23 @@
 'use client'
 
+import React from 'react';
 import { getBlogPost } from '@/lib/blog';
 import { Card, CardBody, Chip, Divider, Button } from '@heroui/react';
 import { Calendar, Clock, User, ArrowLeft, Home } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface BlogDetailPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export default function BlogDetailPage({ params }: BlogDetailPageProps) {
-  const post = getBlogPost(params.slug);
+  const resolvedParams = React.use(params);
+  const post = getBlogPost(resolvedParams.slug);
+  const { t } = useTranslation('blog');
 
   // 如果文章不存在，显示404页面
   if (!post) {
@@ -31,7 +35,7 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
             startContent={<ArrowLeft size={16} />}
             className="mb-4"
           >
-            返回博客列表
+            {t('postDetail.backToBlog')}
           </Button>
         </Link>
         <Link href="/">
@@ -41,7 +45,7 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
             startContent={<Home size={16} />}
             className="mb-4"
           >
-            回到首页
+            {t('postDetail.backToHome')}
           </Button>
         </Link>
       </div>
@@ -70,7 +74,7 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
             </div>
             <div className="flex items-center gap-2">
               <Clock size={16} />
-              <span>约 {post.readTime} 分钟阅读</span>
+              <span>{t('postDetail.readTime', { time: post.readTime })}</span>
             </div>
           </div>
 
@@ -107,12 +111,12 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
                 color="primary" 
                 startContent={<ArrowLeft size={16} />}
               >
-                查看更多文章
+                {t('postDetail.viewMore')}
               </Button>
             </Link>
             
             <div className="text-sm text-gray-500">
-              感谢阅读！
+              {t('postDetail.thankYou')}
             </div>
           </div>
         </CardBody>
