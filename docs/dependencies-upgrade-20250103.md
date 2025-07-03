@@ -74,6 +74,23 @@
 2. **Framer Motion 12.x**: 主要版本升级，如发现动画问题请及时反馈
 3. **TypeScript 5.8**: 可能有新的类型检查规则，注意编译警告
 
+## 问题解决记录
+
+### PostCSS 配置错误
+**问题**: 升级过程中出现 Tailwind CSS 4.x 残留，导致 PostCSS 插件错误
+```
+Error: It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package
+```
+
+**解决方案**: 
+```bash
+# 完全清除依赖并重新安装
+rm -rf node_modules pnpm-lock.yaml
+pnpm install
+```
+
+**结果**: 所有页面正常访问，返回 200 状态码
+
 ## 下一步计划
 
 等待用户确认阶段一升级无问题后，可考虑：
