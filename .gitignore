@@ -36,3 +36,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+docs/cankao
+src/app/deposit
+src/app/withdraw
