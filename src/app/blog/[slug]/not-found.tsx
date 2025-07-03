@@ -1,3 +1,5 @@
+'use client'
+
 import { Button } from '@nextui-org/react';
 import { Home, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';

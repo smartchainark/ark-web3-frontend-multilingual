@@ -48,10 +48,16 @@ function Page() {
         <div className="text-xl font-bold underline text-blue-400 mb-4">
           Hello Tailwindcss!
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-wrap">
           <Button color="success" variant='flat' onClick={() => toast.success('Toast from react-hot-toast!')}>Click to show a toast</Button>
           <Link href="/blog">
             <Button color="primary" variant='flat'>查看技术博客</Button>
+          </Link>
+          <Link href="/deposit">
+            <Button color="secondary" variant='flat'>资产存款</Button>
+          </Link>
+          <Link href="/withdraw">
+            <Button color="warning" variant='flat'>资产提取</Button>
           </Link>
         </div>
         <div className='mt-4 flex text-orange-400'>
