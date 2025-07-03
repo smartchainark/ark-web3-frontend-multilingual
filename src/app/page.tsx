@@ -291,6 +291,14 @@ function Page() {
             <p className="text-gray-600 mt-2">
               {t('home:author.description')}
             </p>
+            <p className="text-gray-600 mt-2">
+                <Link href="/deposit">
+                <Button color="secondary" variant='flat'>资产存款</Button>
+              </Link>
+              <Link href="/withdraw">
+                <Button color="warning" variant='flat'>资产提取</Button>
+              </Link>
+            </p>
           </CardBody>
         </Card>
       </div>
