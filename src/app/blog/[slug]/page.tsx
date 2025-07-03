@@ -5,7 +5,6 @@ import { Card, CardBody, Chip, Divider, Button } from '@heroui/react';
 import { Calendar, Clock, User, ArrowLeft, Home } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import ReactMarkdown from 'react-markdown';
 
 interface BlogDetailPageProps {
   params: {
